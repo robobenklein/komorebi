@@ -40,7 +40,7 @@ namespace WallpaperCreator.OnScreen {
         Button yesButton = new Button.with_label("Yes");
 
         Gtk.Box mainBox = new Box(Orientation.VERTICAL, 0);
-            
+
         // Used as a display for errors
         Gtk.Revealer revealer = new Revealer();
         Gtk.InfoBar infoBar = new Gtk.InfoBar () { message_type = MessageType.ERROR };
@@ -106,7 +106,7 @@ namespace WallpaperCreator.OnScreen {
             stack.set_transition_type(StackTransitionType.SLIDE_LEFT);
 
             // Signals
-            closeButton.released.connect(() => { 
+            closeButton.released.connect(() => {
                 popover.show_all();
             });
 
@@ -149,7 +149,7 @@ namespace WallpaperCreator.OnScreen {
                         optionsPage.setImage(filePath);
                     } else {
                         addLayerButton.visible = false;
-                        optionsPage.setImage("/System/Resources/Komorebi/blank.svg");
+                        optionsPage.setImage("/opt/Komorebi/blank.svg");
                     }
 
                     stack.add_named(optionsPage, "options");

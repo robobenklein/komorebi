@@ -1,17 +1,17 @@
 //
 //  Copyright (C) 2015-2017 Abraham Masri <imasrim114@gmail.com>
 //
-//  This program is free software: you can redistribute it and/or modify it 
-//  under the terms of the GNU Lesser General Public License version 3, as published    
+//  This program is free software: you can redistribute it and/or modify it
+//  under the terms of the GNU Lesser General Public License version 3, as published
 //  by the Free Software Foundation.
-//  
-//  This program is distributed in the hope that it will be useful, but 
-//  WITHOUT ANY WARRANTY; without even the implied warranties of    
-//  MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR  
+//
+//  This program is distributed in the hope that it will be useful, but
+//  WITHOUT ANY WARRANTY; without even the implied warranties of
+//  MERCHANTABILITY, SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR
 //  PURPOSE.  See the GNU General Public License for more details.
-//  
-//  You should have received a copy of the GNU General Public License along 
-//  with this program.  If not, see <http://www.gnu.org/licenses/>  
+//
+//  You should have received a copy of the GNU General Public License along
+//  with this program.  If not, see <http://www.gnu.org/licenses/>
 
 using Gtk;
 using Cairo;
@@ -71,12 +71,12 @@ namespace Komorebi.OnScreen {
                 mode = "dark";
 
             // Images first
-            ramImage.set_from_file(@"/System/Resources/Komorebi/ram_$mode.svg");
+            ramImage.set_from_file(@"/opt/Komorebi/ram_$mode.svg");
 
             if(getCPUArch() == 32)
-        	   cpuImage.set_from_file(@"/System/Resources/Komorebi/cpu_32_$mode.svg");
+        	   cpuImage.set_from_file(@"/opt/Komorebi/cpu_32_$mode.svg");
             else
-               cpuImage.set_from_file(@"/System/Resources/Komorebi/cpu_64_$mode.svg");
+               cpuImage.set_from_file(@"/opt/Komorebi/cpu_64_$mode.svg");
 
             updateInfo();
 
@@ -95,12 +95,12 @@ namespace Komorebi.OnScreen {
     			// Memory (RAM)
     			GTop.Mem mem;
     			GTop.get_mem (out mem);
-                    
+
     			var totalMemory = (float) (mem.total / 1024 / 1024) / 1000;
     			var usedMemory = (float) (mem.used  / 1024/ 1024) / 1000;
 
     			ramLabel.set_markup(@"<span color='%s' font='Lato Regular 10'>%.2f/%.2fGB</span>".printf(color, usedMemory, totalMemory));
-                    
+
     			// CPU
     			GTop.Cpu cpu;
     			GTop.get_cpu (out cpu);

@@ -82,7 +82,7 @@ namespace WallpaperCreator.OnScreen {
 
             chooseThumbnailButton.set_filter (imageFilter);
             chooseThumbnailButton.width_chars = 10;
-            
+
             // Signals
             nameEntry.changed.connect(() => {
 
@@ -121,7 +121,7 @@ namespace WallpaperCreator.OnScreen {
             titleBox.add(titleLabel);
             titleBox.add(aboutLabel);
 
-            aboutGrid.attach(new Image.from_file("/System/Resources/Komorebi/wallpaper_creator.svg"), 0, 0, 1, 1);
+            aboutGrid.attach(new Image.from_file("/opt/Komorebi/wallpaper_creator.svg"), 0, 0, 1, 1);
             aboutGrid.attach(titleBox, 1, 0, 1, 1);
 
             thumbnailBox.add(chooseThumbnailLabel);
@@ -138,7 +138,7 @@ namespace WallpaperCreator.OnScreen {
 
             add(chooseFileLabel);
             add(chooseFileButton);
-            
+
             add(revealer);
         }
     }

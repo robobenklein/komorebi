@@ -21,7 +21,7 @@ namespace WallpaperCreator.OnScreen {
 
     public class FinalPage : Box {
 
-        Image logo = new Image.from_file("/System/Resources/Komorebi/done.svg");
+        Image logo = new Image.from_file("/opt/Komorebi/done.svg");
 
         Label titleLabel = new Label("");
         Label descLabel = new Label("");
@@ -42,7 +42,7 @@ namespace WallpaperCreator.OnScreen {
             descLabel.justify = Justification.CENTER;
 
             titleLabel.set_markup("<span font='Lato 20'>Done</span>");
-            descLabel.set_markup("<span font='Lato Light 12'>Copy the wallpaper folder from your home directory to /System/Komorebi/Resources\nthen open 'Change Wallpaper' to choose your new wallpaper.</span>");
+            descLabel.set_markup("<span font='Lato Light 12'>Copy the wallpaper folder from your home directory to /opt/Komorebi/Resources\nthen open 'Change Wallpaper' to choose your new wallpaper.</span>");
 
             closeButton.margin_top = 20;
             closeButton.halign = Align.CENTER;
@@ -85,10 +85,10 @@ namespace WallpaperCreator.OnScreen {
 
                 // Copy the video into our new dir
                 File.new_for_path(filePath).copy(File.new_for_path(dirPath + @"/$videoFileName"), FileCopyFlags.NONE);
-                
+
                 // Move the thumbnail
                 File.new_for_path(thumbnailPath).copy(File.new_for_path(dirPath + "/thumb.jpg"), FileCopyFlags.NONE);
-            
+
             } else {
 
                 // Copy the wallpaper into our new dir

@@ -1,19 +1,19 @@
-//  
+//
 //  Copyright (C) 2014-2015 Abraham Masri
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
 //  (at your option) any later version.
-// 
+//
 //  This program is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
-// 
+//
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// 
+//
 
 
 using Gtk;
@@ -26,7 +26,7 @@ namespace Komorebi.OnScreen {
 
     public class WallpapersSelector : ScrolledWindow {
 
-        public string path = "/System/Resources/Komorebi/";
+        public string path = "/opt/Komorebi/";
 
         Gtk.Grid grid = new Grid();
 
@@ -52,10 +52,10 @@ namespace Komorebi.OnScreen {
             getWallpapers();
 
             // var thumbnail = new Thumbnail.Add();
-                            
+
             // addThumbnail(thumbnail);
-            // thumbnailsList.append(thumbnail); 
-            
+            // thumbnailsList.append(thumbnail);
+
             add(grid);
         }
 
@@ -68,7 +68,7 @@ namespace Komorebi.OnScreen {
                 thumbnailsList.remove(thumbnail);
 
 
-            File wallpapersFolder = File.new_for_path("/System/Resources/Komorebi");
+            File wallpapersFolder = File.new_for_path("/opt/Komorebi");
 
             try {
 
@@ -87,18 +87,18 @@ namespace Komorebi.OnScreen {
                             File.new_for_path(fullPath + "/config").query_exists()) {
 
                             var thumbnail = new Thumbnail(path, name);
-                            
+
                             // Signals
                             thumbnail.clicked.connect(() => wallpaperChanged());
 
                             addThumbnail(thumbnail);
-                            thumbnailsList.append(thumbnail); 
+                            thumbnailsList.append(thumbnail);
                         } else
                             print(@"[WARNING]: Found an invalid wallpaper with name: $name \n");
                     }
 
             } catch {
-                print("Could not read directory '/System/Resources/Komorebi/'");
+                print("Could not read directory '/opt/Komorebi/'");
             }
         }
 

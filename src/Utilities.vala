@@ -228,7 +228,7 @@ namespace Komorebi.Utilities {
 	void readWallpaperFile () {
 
 		// Read the config file
-	    wallpaperKeyFile.load_from_file(@"/System/Resources/Komorebi/$wallpaperName/config", KeyFileFlags.NONE);
+	    wallpaperKeyFile.load_from_file(@"/opt/Komorebi/$wallpaperName/config", KeyFileFlags.NONE);
 
 		// Wallpaper Info
 		wallpaperType = wallpaperKeyFile.get_string("Info", "WallpaperType");
@@ -279,7 +279,7 @@ namespace Komorebi.Utilities {
 		assetHeight = wallpaperKeyFile.get_integer ("Asset", "Height");
 
 		// Set GNOME's wallpaper to this
-		var wallpaperPath = @"/System/Resources/Komorebi/$wallpaperName/wallpaper.jpg";
+		var wallpaperPath = @"/opt/Komorebi/$wallpaperName/wallpaper.jpg";
 		new GLib.Settings("org.gnome.desktop.background").set_string("picture-uri", ("file://" + wallpaperPath));
 		new GLib.Settings("org.gnome.desktop.background").set_string("picture-options", "stretched");
 	}

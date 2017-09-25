@@ -200,7 +200,7 @@ namespace Komorebi.OnScreen {
 
 
 	        twentyFourHoursButton.toggled.connect (() => { timeTwentyFour = twentyFourHoursButton.active; updateConfigurationFile(); });
-	        showDesktopIconsButton.toggled.connect (() => { 
+	        showDesktopIconsButton.toggled.connect (() => {
                 showDesktopIcons = showDesktopIconsButton.active;
                 updateConfigurationFile();
 
@@ -221,7 +221,7 @@ namespace Komorebi.OnScreen {
             titleBox.add(titleLabel);
             titleBox.add(aboutLabel);
 
-            aboutGrid.attach(new Image.from_file("/System/Resources/Komorebi/komorebi.svg"), 0, 0, 1, 1);
+            aboutGrid.attach(new Image.from_file("/opt/Komorebi/komorebi.svg"), 0, 0, 1, 1);
             aboutGrid.attach(titleBox, 1, 0, 1, 1);
 
             bottomPreferencesBox.pack_start(donateButton);
@@ -232,7 +232,7 @@ namespace Komorebi.OnScreen {
             preferencesPage.add(showDesktopIconsButton);
             preferencesPage.pack_end(bottomPreferencesBox);
 
-            bottomWallpapersBox.add(new Image.from_file("/System/Resources/Komorebi/info.svg"));
+            bottomWallpapersBox.add(new Image.from_file("/opt/Komorebi/info.svg"));
             bottomWallpapersBox.add(currentWallpaperLabel);
 
             if(!canPlayVideos()) {
